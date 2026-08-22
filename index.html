@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Secure Login System{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Secure Login System</h1>
+    <p>A Flask authentication demo with password hashing, validation, CSRF protection, secure sessions, parameterized SQL, and login lockout.</p>
+    {% if session.get('user_id') %}
+        <a class="button" href="{{ url_for('dashboard') }}">Open Dashboard</a>
+    {% else %}
+        <a class="button" href="{{ url_for('register') }}">Create Account</a>
+        <a class="button secondary" href="{{ url_for('login') }}">Login</a>
+    {% endif %}
+</section>
+{% endblock %}

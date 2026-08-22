@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="card">
+    <h1>Welcome, {{ username }}!</h1>
+    <p>You are authenticated and viewing a protected page.</p>
+    <div class="security-list">
+        <p>✓ Password stored as a secure one-way hash</p>
+        <p>✓ Parameterized SQLite queries</p>
+        <p>✓ CSRF-protected forms</p>
+        <p>✓ Secure session cookie settings</p>
+        <p>✓ Login failure lockout</p>
+    </div>
+</div>
+{% endblock %}

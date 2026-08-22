@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<div class="card">
+    <h1>Create Account</h1>
+    <p class="hint">Use a password with at least 10 characters.</p>
+    <form method="post" novalidate>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <label>Username
+            <input name="username" minlength="3" maxlength="30" pattern="[A-Za-z0-9_]+" required autocomplete="username">
+        </label>
+        <label>Password
+            <input type="password" name="password" minlength="10" maxlength="128" required autocomplete="new-password">
+        </label>
+        <label>Confirm password
+            <input type="password" name="confirm_password" minlength="10" maxlength="128" required autocomplete="new-password">
+        </label>
+        <button class="button" type="submit">Register</button>
+    </form>
+</div>
+{% endblock %}

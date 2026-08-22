@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="card">
+    <h1>Login</h1>
+    <form method="post" novalidate>
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <label>Username
+            <input name="username" minlength="3" maxlength="30" pattern="[A-Za-z0-9_]+" required autocomplete="username">
+        </label>
+        <label>Password
+            <input type="password" name="password" maxlength="128" required autocomplete="current-password">
+        </label>
+        <button class="button" type="submit">Login</button>
+    </form>
+</div>
+{% endblock %}
